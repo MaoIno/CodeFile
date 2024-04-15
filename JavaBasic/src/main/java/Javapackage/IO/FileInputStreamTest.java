@@ -14,7 +14,7 @@ public class FileInputStreamTest {
     public static void main(String[] args) {
         InputStream in = null;
         try {
-            in = new FileInputStream("E:\\File\\CODE\\MavenFiles\\src\\main\\java\\Javapackage\\IO\\111.txt");
+            in = new FileInputStream("JavaBasic/src/main/java/Javapackage/IO/111.txt");
             //int read = in.read(); 一次读一个字节
             byte[] bytes = new byte[in.available()];
             int count = in.read(bytes);

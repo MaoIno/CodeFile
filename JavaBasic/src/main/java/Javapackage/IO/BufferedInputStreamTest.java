@@ -1,8 +1,6 @@
 package Javapackage.IO;
-
 import java.io.*;
 import java.io.FileOutputStream;
-
 
 public class BufferedInputStreamTest {
     public static void main(String[] args) {

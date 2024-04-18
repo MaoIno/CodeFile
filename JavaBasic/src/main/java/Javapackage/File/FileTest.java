@@ -8,7 +8,7 @@ import java.util.logging.SimpleFormatter;
 
 public class FileTest {
     public static void main(String[] args) throws Exception{
-        File file = new File("e:/files");
+        File file = new File("e:/files.properties");
         System.out.println(file.exists() ? "exists" : "not exists");
         if(!file.exists()){
             file.createNewFile();

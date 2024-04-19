@@ -1,11 +1,10 @@
 package Javapackage.net;
 
-import java.io.BufferedWriter;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 /**
  * ClassName: Client
@@ -19,10 +18,25 @@ public class Client {
         InetAddress ia = InetAddress.getLocalHost();
         int port = 8888;
         try(Socket clientSocket = new Socket(ia, port);
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()))){
-            bw.write("客户端请求消息");
-            bw.flush();
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
+            BufferedInputStream bis = new BufferedInputStream(new FileInputStream("E:\\File\\CodeFile\\JavaBasic\\src\\main\\resources\\dogTest.jpg"));
+            BufferedOutputStream bos = new BufferedOutputStream(clientSocket.getOutputStream());
+            BufferedReader br = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
+            ){
+            byte[] bytes = new byte[1024];
+            int count = 0;
+            while ((count = bis.read(bytes)) != -1) {
+                bos.write(bytes,0,count);
+                //bos1.write(bytes,0,count);
+            }
+            bw.flush();
+            //bos1.flush();
+
+            /*String s = null;
+            while ((s = br.readLine()) != null) {
+                System.out.println(s);
+            }*/
         }catch (Exception e){
             e.printStackTrace();
         }

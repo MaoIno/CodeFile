@@ -7,6 +7,7 @@ import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 /**
  * ClassName: InetAddressTest
@@ -41,5 +42,8 @@ public class InetAddressTest {
         while ((s = br.readLine()) != null) {
             System.out.println(s);
         }*/
+        Scanner s = new Scanner(System.in);
+        String strings = s.next();
+
     }
 }

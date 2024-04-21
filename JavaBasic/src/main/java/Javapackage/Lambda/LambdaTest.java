@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.function.*;
 
 /**
+ *
  * ClassName: LambdaTest
  * Description:
  * Author:YoungJan
